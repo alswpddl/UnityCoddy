@@ -30,3 +30,38 @@ speed * Time.deltaTime을 변수에 넣어서 화면 주사율에 상관없이 �
 "[SerializeField] private" 을 자료형 변수에 선행하여 작성 함으로서 다른 곳에서 참조하지 못하는 변수 생성(인스펙트에는 보임)
 
 Mathf.Sin, Mathf.Abs, Mathf.Sqrt, Mathf.PI 등으로 실수형 c# Math사용 가능  
+
+# Day 3
+
+[Header("Movement")]  
+뒤따르는 필드들을 묶기 위해 필드 위에 굵은 제목을 표시
+
+[Tooltip("Units per second")]  
+마우스를 필드 이름 위에 올려놓으면 해당 텍스트를 표시
+
+[Range(0f, 10f)]  
+슬라이더를 표시하고 Inspector에서 값을 0과 10 사이로 유지(코드는 변경 됨)
+
+[HideInInspector]  
+public 필드를 Inspector에서 숨기지만, 다른 스크립트에서는 계속 사용 가능
+
+Input.GetKeyDown(KeyCode.Space);  
+키를 누를 때마다 한 프레임 동안 true
+
+Input.GetKey(KeyCode.Space);  
+키를 누르고 있는 동안 매 프레임 true
+
+Input.GetKeyUp(KeyCode.Space);  
+키에서 손을 뗄 때 한 프레임 동안 true
+
+Horizontal : x축    
+Vertical : z축
+
+Input.GetAxis("Horizontal or Vertical");  
+좌우 화살표 키(A or D)를 -1 ~ 1사이의 숫자로 변환
+
+Input.GetAxisRaw("Horizontal or Vertical");  
+좌우 화살표 키(A or D)를 -1 or 0 or 1의 즉각적인 숫자로 변환
+
+Input.GetButtonDown("Fire1");  
+GetButton은 키의 "이름"을 인식 GetKey와 같이 GetButtonDown, GetButtonUp도 마찬가지로 가능
