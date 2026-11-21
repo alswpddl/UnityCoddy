@@ -65,3 +65,33 @@ Input.GetAxisRaw("Horizontal or Vertical");
 
 Input.GetButtonDown("Fire1");  
 GetButton은 키의 "이름"을 인식 GetKey와 같이 GetButtonDown, GetButtonUp도 마찬가지로 가능
+
+# Day 4
+
+Input.GetMouseButtonDown(0 or 1 or 2)  
+0 : 마우스 왼쪽  
+1 : 마우스 휠  
+2 : 마우스 오른쪽  
+Input.GetMouseButtonDown(0) = Input.GetKeyDown(KeyCode.Mouse0)
+
+public Vector3 current = new Vector3(1, 0, 0);  
+public Vector3 motor = new Vector3(0, 0, 2);  
+motor += current(1, 0, 2)처럼 벡터끼리의 연산이 가능  
+trans.position += motor
+
+Vector3.right (1, 0, 0) 및 Vector3.left (-1, 0, 0)  
+Vector3.up (0, 1, 0) 및 Vector3.down (0, -1, 0)  
+Vector3.forward (0, 0, 1) 및 Vector3.back (0, 0, -1)  
+
+if (Input.GetKey(KeyCode.UpArrow)) {  
+  transform.position += Vector3.up * speed * Time.deltaTime;  
+}  
+와 같이 사용 가능
+
+transform.forward  
+transform.up 및 transform.down  
+transform.left 및 transform.right  
+오브젝트 자체의 방향
+
+transform.Translate(Vector3.forward * speed * Time.deltaTime)  
+벡터를 오브젝트의 방향에서 해석
